@@ -3,6 +3,37 @@ AD-SOYAD: METEHAN SALİHOĞLU
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
 
+1. Problemin Analizi
+
+Amaç: Tic-Tac-Toe (3x3 XOX) oyununda, bilgisayarın veya oyuncunun her hamlede en iyi hareketi seçerek kazanmasını veya beraberliği garantilemesini sağlayan bir algoritma oluşturmak.
+
+Girdiler:
+
+Mevcut oyun tahtası durumu (boş, X, O)
+
+Oyuncunun sembolü (X veya O)
+
+Rakibin sembolü
+
+İşlemler:
+
+Her hamlede:
+
+Kazanabileceği hamle var mı → yap
+
+Rakip bir sonraki hamlede kazanacak mı → engelle
+
+Orta kare boşsa → al
+
+Köşeler boşsa → köşe al
+
+Kenarlar boşsa → kenar al
+
+Çıktılar:
+
+Seçilecek en iyi hamle koordinatı (satır, sütun)
+
+2. Pseudocode (Sözde Kod)
 FONKSİYON EN_IYI_HAMLE(tahta, oyuncu, rakip):
 
     // 1. KAZANMA KONTROLÜ
@@ -47,3 +78,21 @@ FONKSİYON EN_IYI_HAMLE(tahta, oyuncu, rakip):
     // 6. HİÇBİRİ DEĞİLSE
     DÖN rastgele_bos_hücre
 SON FONKSİYON
+
+3. LLM (ChatGPT) Yardımı
+
+Soru:
+
+Tic-Tac-Toe oyununda her hamlede kazanma veya rakibi engelleme kontrolünü nasıl verimli yapabilirim?
+
+Cevap:
+
+Her boş hücreyi geçici olarak doldurup “kazandı mı?” fonksiyonunu çağırmak en basit yöntemdir. Bu kontrol 3x3 tahta için oldukça hızlıdır. Önce kendi kazanma hamleni, sonra rakibin kazanma hamlesini kontrol etmek en temel stratejik sıralamadır.
+
+4. Alternatif Stratejiler
+
+Minimax Algoritması: Tüm olası hamleleri ve rakibin cevaplarını derinlemesine arayıp optimal hamleyi bulur. (Daha ileri düzey)
+
+Heuristik Ağırlıklı Strateji: Orta kareye yüksek puan, köşelere orta puan, kenarlara düşük puan vererek en yüksek puanlı boş kareyi seçer.
+
+Rastgele + Savunma: İlk hamlelerde rastgele oynayıp, sadece rakibi engelleme üzerine kurulu basit yapay zekâ.
