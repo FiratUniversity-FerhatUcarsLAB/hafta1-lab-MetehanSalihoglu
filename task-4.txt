@@ -1,4 +1,202 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No: 250542025
+AD-SOYAD: METEHAN SALİHOĞLU
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+1. Problemin Analizi
+
+Amaç: Çok büyük iki sayıyı (örneğin 10.000 basamaklı) çarpmak. Normal çarpma 
+𝑂
+(
+𝑛
+2
+)
+O(n
+2
+) karmaşıklığa sahiptir; Karatsuba yöntemi ise daha hızlıdır (
+𝑂
+(
+𝑛
+log
+⁡
+2
+3
+)
+O(n
+log
+2
+	​
+
+3
+) ≈ 
+𝑂
+(
+𝑛
+1.585
+)
+O(n
+1.585
+)).
+
+Böl ve Fethet Mantığı:
+
+Sayıları ortadan ikiye böl (A = yüksek + düşük, B = yüksek + düşük).
+
+Alt problemler olarak üç çarpım yap:
+
+𝑧
+2
+=
+y
+u
+¨
+ksek kısımlar 
+c
+¸
+arpımı
+z2=y
+u
+¨
+ksek kısımlar 
+c
+¸
+	​
+
+arpımı
+
+𝑧
+0
+=
+d
+u
+¨
+s
+¸
+u
+¨
+k kısımlar 
+c
+¸
+arpımı
+z0=d
+u
+¨
+s
+¸
+	​
+
+u
+¨
+k kısımlar 
+c
+¸
+	​
+
+arpımı
+
+𝑧
+1
+=
+(y
+u
+¨
+ksek+d
+u
+¨
+s
+¸
+u
+¨
+k)
+×
+(y
+u
+¨
+ksek+d
+u
+¨
+s
+¸
+u
+¨
+k)
+−
+𝑧
+2
+−
+𝑧
+0
+z1=(y
+u
+¨
+ksek+d
+u
+¨
+s
+¸
+	​
+
+u
+¨
+k)×(y
+u
+¨
+ksek+d
+u
+¨
+s
+¸
+	​
+
+u
+¨
+k)−z2−z0
+
+Sonucu bu üç değeri uygun basamak kaydırmalarıyla birleştirerek bul.
+
+2. Pseudocode (Sözde Kod)
+FONKSİYON KARATSUBA_CARP(a, b):
+
+    // Küçük sayılar için doğrudan çarp
+    EĞER a < 10 VEYA b < 10 İSE
+        DÖN a * b
+    SON
+
+    // Sayı uzunluklarını bul
+    n = MAX(a'nın basamak sayısı, b'nin basamak sayısı)
+    m = n / 2  // ortadan böl
+
+    // Sayıları böl
+    yüksek_a = a / 10^m
+    düşük_a  = a % 10^m
+    yüksek_b = b / 10^m
+    düşük_b  = b % 10^m
+
+    // 3 alt çarpım
+    z2 = KARATSUBA_CARP(yüksek_a, yüksek_b)
+    z0 = KARATSUBA_CARP(düşük_a, düşük_b)
+    z1 = KARATSUBA_CARP(yüksek_a + düşük_a, yüksek_b + düşük_b) - z2 - z0
+
+    // Sonucu birleştir
+    SONUC = (z2 * 10^(2*m)) + (z1 * 10^m) + z0
+
+    DÖN SONUC
+SON FONKSİYON
+
+3. LLM (ChatGPT) Yardımı
+
+Soru:
+
+İki büyük sayıyı divide & conquer yöntemiyle nasıl çarpabilirim?
+
+Cevap:
+
+Karatsuba algoritması bu iş için klasik bir örnektir. Sayıları ortadan bölüp 3 alt çarpım yapar, ardından bunları birleştirir. Bu yöntem, özellikle çok büyük sayılarda klasik uzun çarpmadan daha hızlıdır.
+
+4. Alternatif Çözüm Yolları
+
+Klasik Uzun Çarpma: Basit ama yavaştır — her basamağı diğer her basamakla çarpar.
+
+FFT (Hızlı Fourier Transformu) Çarpımı: Çok daha büyük sayılar için Karatsuba’dan da hızlıdır.
+
+Karatsuba + FFT Hibrit: Pratikte büyük sayı kütüphaneleri böyle yapar.
