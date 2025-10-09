@@ -1,4 +1,72 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No: 250542025
+AD-SOYAD: METEHAN SALİHOĞLU
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+1. Problemin Analizi
+
+Amaç: Bir sınıftaki öğrencilerin notlarını alıp, en yüksek nottan en düşüğe sıralamak.
+Girdiler:
+
+Öğrenci isimleri listesi
+
+Notlar listesi (veya her öğrenciyle eşleştirilmiş bir veri yapısı)
+
+İşlemler:
+
+Notlara göre öğrencileri karşılaştır
+
+Büyükten küçüğe sıralama yap
+
+Eşit not varsa alfabetik sıraya göre ikincil sıralama yap (opsiyonel)
+
+Sonuçları ekrana yazdır
+
+Çıktılar:
+
+Sıralı öğrenci-not listesi
+
+2. Pseudocode (Sözde Kod)
+AL ogrenci_listesi, not_listesi
+BİRLEŞTİR ogrenci_ve_notlar = [(ogrenci, not), ...]
+
+N = ogrenci_ve_notlar.uzunluk
+
+FOR i = 0 TO N-1
+    FOR j = 0 TO N-i-2
+        EĞER ogrenci_ve_notlar[j].not < ogrenci_ve_notlar[j+1].not İSE
+            TAKAS ogrenci_ve_notlar[j], ogrenci_ve_notlar[j+1]
+        DEĞİLSE EĞER ogrenci_ve_notlar[j].not == ogrenci_ve_notlar[j+1].not VE
+                 ogrenci_ve_notlar[j].isim > ogrenci_ve_notlar[j+1].isim İSE
+            TAKAS ogrenci_ve_notlar[j], ogrenci_ve_notlar[j+1]
+        SON
+    SON
+SON
+
+YAZ "Notlar yüksekten düşüğe sıralandı:"
+HER eleman İÇİN ogrenci_ve_notlar
+    YAZ eleman.isim, eleman.not
+SON
+
+
+Yukarıdaki örnekte klasik bir Bubble Sort (kabarcık sıralama) yöntemi kullanıldı çünkü anlaşılması çok kolaydır. Daha hızlı sıralama algoritmaları (Quick Sort, Merge Sort) da kullanılabilir.
+
+3. LLM (ChatGPT) Yardımı
+
+Soru:
+
+Öğrencilerin notlarını yüksekten düşüğe sıralamak için en kolay sıralama algoritması hangisi?
+
+Cevap:
+
+Eğitim amaçlı en kolay yöntem Bubble Sort veya Selection Sort’tur. Bubble Sort’ta her geçişte en büyük değeri listenin sonuna “kabarcık gibi” taşırsınız. Küçük veri setleri için gayet yeterlidir. Daha büyük veriler için Quick Sort daha verimlidir.
+
+4. Alternatif Çözüm Yolları
+
+Selection Sort: Her turda en büyük notu bulup listenin başına koyma.
+
+Quick Sort: Böl ve fethet yaklaşımıyla çok daha hızlı sıralama.
+
+Yerleşik Sıralama Fonksiyonları: (Gerçek kod yazarken) sort fonksiyonuna özel karşılaştırma vererek kolayca sıralama yapılabilir.
+
+Arama Ekstra: Sıralandıktan sonra belirli bir öğrencinin sırasını binary search ile hızlı bulmak mümkün.
