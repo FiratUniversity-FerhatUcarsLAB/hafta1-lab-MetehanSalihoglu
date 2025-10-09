@@ -1,4 +1,49 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No: 250542025
+AD-SOYAD: METEHAN SALİHOĞLU
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+FONKSİYON EN_IYI_HAMLE(tahta, oyuncu, rakip):
+
+    // 1. KAZANMA KONTROLÜ
+    HER boş_hücre İÇİN
+        GEÇİCİ_TAHTA = tahta
+        GEÇİCİ_TAHTA[boş_hücre] = oyuncu
+        EĞER KAZANDI_MI(GEÇİCİ_TAHTA, oyuncu) İSE
+            DÖN boş_hücre
+        SON
+    SON
+
+    // 2. RAKİBİ ENGELLEME
+    HER boş_hücre İÇİN
+        GEÇİCİ_TAHTA = tahta
+        GEÇİCİ_TAHTA[boş_hücre] = rakip
+        EĞER KAZANDI_MI(GEÇİCİ_TAHTA, rakip) İSE
+            DÖN boş_hücre // engelle
+        SON
+    SON
+
+    // 3. ORTA ALANI KONTROL ET
+    EĞER tahta[1][1] BOŞSA
+        DÖN (1,1)
+    SON
+
+    // 4. KÖŞELERİ KONTROL ET
+    KÖŞELER = [(0,0), (0,2), (2,0), (2,2)]
+    HER k İÇİN KÖŞELER
+        EĞER tahta[k] BOŞSA
+            DÖN k
+        SON
+    SON
+
+    // 5. KENARLARI KONTROL ET
+    KENARLAR = [(0,1), (1,0), (1,2), (2,1)]
+    HER k İÇİN KENARLAR
+        EĞER tahta[k] BOŞSA
+            DÖN k
+        SON
+    SON
+
+    // 6. HİÇBİRİ DEĞİLSE
+    DÖN rastgele_bos_hücre
+SON FONKSİYON
