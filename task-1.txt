@@ -1,4 +1,28 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No: 250542025
+AD-SOYAD: METEHAN SALİHOĞLU
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+AL ders_listesi, zorluk_seviyeleri, toplam_gun, gunluk_saat
+
+SIRALA ders_listesi zorluk_seviyelerine göre (en zor -> en kolay)
+
+FOR gun = 1 TO toplam_gun
+    KALAN_SAAT = gunluk_saat
+    INDEX = 1
+
+    WHILE KALAN_SAAT > 0 AND INDEX ≤ ders_listesi.uzunluk
+        SECILEN_DERS = ders_listesi[INDEX]
+        AYRILAN_SAAT = SECILEN_DERS.zorluk / TOPLAM_ZORLUK * gunluk_saat
+        CALIS(SECILEN_DERS, AYRILAN_SAAT)
+        KALAN_SAAT = KALAN_SAAT - AYRILAN_SAAT
+        INDEX = INDEX + 1
+    END WHILE
+
+    GUN_SONU_DEGERLENDIR()
+    EĞER eksik_konu VARSA
+        EK_CALIŞMA_PLANLA(eksik_konu)
+    SON
+END FOR
+
+YAZ "Çalışma planı tamamlandı!"
