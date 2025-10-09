@@ -1,4 +1,80 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No: 250542025
+AD-SOYAD: METEHAN SALİHOĞLU
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+
+1. Problemin Analizi
+
+Amaç: Bir sosyal medya gönderisinin daha fazla kişiye ulaşmasını, etkileşim almasını ve viral olma şansını artırmak için adım adım bir plan oluşturmak.
+
+Girdiler:
+
+Hedef kitle özellikleri (yaş, ilgi alanı, aktif olduğu saatler)
+
+İçerik türü (video, fotoğraf, yazı vs.)
+
+Platform (Instagram, TikTok, X, vb.)
+
+Gönderi zamanı
+
+İşlemler:
+
+En iyi içerik türünü seç
+
+Paylaşım zamanını optimize et
+
+Etkileşim artıracak unsurlar ekle (başlık, etiket, müzik vb.)
+
+Gönderiyi paylaş
+
+Geri bildirimleri analiz et, yeniden dene
+
+Çıktılar:
+
+Viral olma ihtimali yüksek, optimize edilmiş bir gönderi planı
+
+2. Pseudocode (Sözde Kod)
+AL hedef_kitle, platform, içerik_türü
+
+ZAMAN = EN_IYI_SAAT_BUL(hedef_kitle, platform)
+
+EĞER içerik_türü == "video" İSE
+    GÖRSEL = KISA_VE_DİKKAT_ÇEKİCİ_VIDEO_HAZIRLA()
+DEĞİLSE EĞER içerik_türü == "fotoğraf" İSE
+    GÖRSEL = YÜKSEK_KALİTELİ_FOTO_HAZIRLA()
+DEĞİLSE
+    GÖRSEL = ETKİLEYİCİ_METİN_OLUŞTUR()
+SON
+
+BAŞLIK = DİKKAT_ÇEKEN_BAŞLIK_OLUŞTUR()
+ETİKETLER = POPÜLER_ETİKETLER_SEC(platform, hedef_kitle)
+MUZIK = TRENDE_UYGUN_MUZIK_SEC(platform)
+
+GONDERI = BİRLEŞTİR(GÖRSEL, BAŞLIK, ETİKETLER, MUZIK)
+
+PAYLAS(GONDERI, ZAMAN)
+
+BİRKAÇ_SAAT_SONRA:
+    ETKILEŞIM_VERİLERİ = ANALİZ_ET(GONDERI)
+    EĞER ETKILEŞIM_VERİLERİ beklenenin altındaysa
+        FARKLI_ETİKETLER_DENE()
+        PAYLASIM_ZAMANINI_GÜNCELLE()
+    SON
+
+3. LLM (ChatGPT) Yardımı
+
+Soru:
+Bir gönderinin sosyal medyada viral olma ihtimalini artırmak için algoritmik olarak hangi adımlar izlenebilir?
+
+Cevap:
+Hedef kitle analizi, doğru zamanlama, dikkat çekici içerik üretimi, trendleri takip etme, hashtag optimizasyonu ve ilk saatlerde etkileşim takibi, viral yayılımın temelini oluşturur. Bunları sistematik şekilde uygularsan başarı oranı artar.
+
+4. Alternatif Özgün Proje Fikirleri
+
+☕ Kahve demleme algoritması (sıcaklık, süre, oranlara göre)
+
+👥 Arkadaş grubunda ortak karar algoritması (oylama + tartışma adımları)
+
+🚗 Trafikte en az yakıtla hedefe ulaşma algoritması
+
+🛏️ Sabah erken kalkmayı garanti eden rutin algoritması
