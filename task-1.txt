@@ -3,6 +3,35 @@ AD-SOYAD: METEHAN SALİHOĞLU
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
 
+1. Problemin Analizi
+
+Amaç: Bir öğrencinin sınavlara sistemli şekilde çalışmasını sağlayan bir algoritma oluşturmak.
+Girdiler:
+
+Toplam çalışma günü sayısı
+
+Günlük çalışma süresi
+
+Derslerin listesi ve zorluk seviyeleri
+
+Sınav tarihi
+
+İşlemler:
+
+Günlük plan oluşturma
+
+Dersleri zorluk seviyesine göre sıraya koyma
+
+Zamanı verimli şekilde paylaştırma
+
+Her günün sonunda ilerlemeyi kontrol etme
+
+Çıktılar:
+
+Günlük ders programı
+
+Eksik kalan konular varsa ek çalışma günleri planı
+
 AL ders_listesi, zorluk_seviyeleri, toplam_gun, gunluk_saat
 
 SIRALA ders_listesi zorluk_seviyelerine göre (en zor -> en kolay)
@@ -26,3 +55,18 @@ FOR gun = 1 TO toplam_gun
 END FOR
 
 YAZ "Çalışma planı tamamlandı!"
+Soru:
+
+Günlük çalışma planı için zorluk seviyesine göre ders sıralaması yapmak istiyorum, nasıl bir algoritma önerirsin?
+
+ChatGPT’nin cevabı:
+
+Zorluk seviyelerini numerik bir değerle (örneğin 1–5 arası) temsil edip ders listesini bu değerlere göre azalan sırada sıralayabilirsiniz. Daha zor derslere daha fazla zaman ayırmak için toplam günlük çalışma saatini zorluk seviyelerinin oranına göre bölüştürmek mantıklı olur.
+
+4. Alternatif Çözüm Yolları
+
+Zaman bloklama yöntemi: Her güne sabit saat dilimleri koyup her derse blok ayırmak.
+
+Öncelik tabanlı yaklaşım: En yakın sınavlı veya en düşük netli derse öncelik vererek sırayla çalışmak.
+
+Rastgeleleştirilmiş çalışma: Monotonluğu kırmak için zorluk sıralamasına küçük rastgelelik eklemek.
